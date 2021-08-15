@@ -9,7 +9,7 @@
                   <!-- v-for="link in links" :key="link" -->
                   Home
                </v-tab>
-               <v-tab to="/about">
+               <v-tab to="/all_data">
                   <v-icon left>mdi-information</v-icon>About
                </v-tab>
             </v-tabs>
@@ -33,27 +33,9 @@
             </v-navigation-drawer>
             <v-container>
                <v-row>
-                  <v-col cols="12" md="3" lg="2" class="hidden-sm-and-down">
-                     <v-sheet rounded="lg" height="auto" elevation="5">
-                        <div class="px-2 py-2">
-                           <v-list nav dense>
-                              <v-list-item-group active-class="deep-purple--text text--accent-4">
-                                 <v-list-item>
-                                    <v-list-item-title class="text-center">Sidebar Item 1</v-list-item-title>
-                                 </v-list-item>
-
-                                 <v-list-item>
-                                    <v-list-item-title class="text-center">Sidebar item 2</v-list-item-title>
-                                 </v-list-item>
-                              </v-list-item-group>
-                           </v-list>
-                        </div>
-                     </v-sheet>
-                  </v-col>
-
-                  <v-col cols="12" sm="12" md="9" lg="10">
+                  <v-col cols="12">
                      <v-sheet rounded="lg" height="auto" class="purple lighten-4" elevation="5">
-                        <router-view class="px-5 py-5"></router-view>
+                        <router-view class="px-2 py-2"></router-view>
                      </v-sheet>
                   </v-col>
                </v-row>

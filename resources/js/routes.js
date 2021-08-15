@@ -1,8 +1,5 @@
-import Home from "./components/home";
-import About from "./components/about";
-import Login from "./components/login";
-import Register from "./components/register";
-import Dashboard from "./components/dashboard";
+import Form from "./components/form";
+import AllData from "./components/data";
 import NotFound from "./components/notfound";
 import axios from "axios";
 
@@ -19,42 +16,15 @@ export default{
       },
       {
          path: '/',
-         component: Home,
-         name: 'Home',
-         meta: { title: 'Home' }
+         component: Form,
+         name: 'Form',
+         meta: { title: 'Form' }
       },
       {
-         path: '/about',
-         component: About,
-         name: 'About',
-         meta: { title: 'About Us' }
+         path: '/all_data',
+         component: AllData,
+         name: 'AllData',
+         meta: { title: 'All Data' }
       },
-      {
-         path: '/login',
-         component: Login,
-         name: 'Login',
-         meta: { title: 'Login' }
-      },
-      {
-         path: '/register',
-         component: Register,
-         name: 'Register',
-         meta: { title: 'Register' }
-      },
-      {
-         path: '/dashboard',
-         component: Dashboard,
-         name: 'Dashboard',
-         meta: { title: 'Dashboard' },
-         // check if user is authenticated or not. If yes, process next request. Otherwise, send to login page.
-         beforeEnter: ( to, from, next) => {
-            axios.get('/api/authenticated')
-            .then(()=>{
-               next()
-            }).catch(()=>{
-               return next('/login')
-            })
-         }
-      },      
    ]
 }

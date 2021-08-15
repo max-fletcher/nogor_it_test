@@ -27,3 +27,7 @@ Route::middleware('auth:sanctum')->get('/authenticated', function (Request $requ
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'register']);
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'login']);
 Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
+
+Route::get('/form/index', [App\Http\Controllers\FormController::class, 'index']);
+Route::post('/form/store', [App\Http\Controllers\FormController::class, 'store']);
+Route::delete('/form/destroy/{id}', [App\Http\Controllers\FormController::class, 'destroy']);
