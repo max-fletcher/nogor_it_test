@@ -1,12 +1,12 @@
 <template>
    <div>      
       <v-sheet class="mt-3 pt-6 pb-2 px-8">
-         Name: {{name}} <br>
+         <!-- Name: {{name}} <br>
          Email: {{email}} <br>
          Photo:{{photo}} <br>
          Gender: {{gender}} <br>
          Skills: {{skills}} <br>
-         {{ errors }}
+         {{ errors }} -->
          <v-row class="mb-4 mx-sm-10">
             <v-col>
                <v-row>                  
