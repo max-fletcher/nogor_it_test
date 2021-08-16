@@ -65,8 +65,7 @@ class FormController extends Controller
     public function destroy($id)
     {
         $form = Form::find($id);
-        if($form){
-            Storage::delete('public/images/'.$form->photo);  //deletes iamge
+        if($form){            
             $form->delete();
             return response()->json( "Form Deleted Successfully !!" ,201);
         }

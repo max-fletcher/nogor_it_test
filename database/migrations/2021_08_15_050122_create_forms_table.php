@@ -20,6 +20,7 @@ class CreateFormsTable extends Migration
             $table->string('photo');
             $table->string('gender');
             $table->string('skills');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
