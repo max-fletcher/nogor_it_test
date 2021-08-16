@@ -118,7 +118,7 @@
                         <!-- File Upload -->
                         <v-file-input
                            truncate-length="15"
-                           label="Select Image"
+                           label="Select New Image"
                            @change="select_file"
                            :rules="photo_rules"
                            prepend-inner-icon="mdi-paperclip"
@@ -268,16 +268,19 @@ export default {
       },
 
       submitForm() {         
+         console.log("trigger 1")
          if (this.$refs.contact_us_form.validate()) {
             this.form_disabled = true
             this.form_loading = true
-
+            
+            console.log("trigger 2")
             if (!this.photo) {
                this.error_message = "Please select a file!";
                this.form_disabled = false
             this.form_loading = false
                return;
             }
+         console.log("trigger 3")
 
             this.error_message = "";
 
@@ -286,11 +289,13 @@ export default {
             formData.append('email', this.email)
             formData.append('photo', this.photo)
             formData.append('gender', this.gender)
+            formData.append('_method', 'PATCH')
             formData.append('skills', this.skills.toString())
 
+            console.log("trigger 3")
             // console.log(formData);
 
-            axios.post("/api/form/store", formData)
+            axios.post("/api/form/update/" + this.$route.params.id, formData)
             .then((res) => {
                console.log(res.data)
                this.success_snackbar = true
@@ -324,6 +329,28 @@ export default {
         this.skills.length > 0 || "At least one item should be selected"
       ];
     }
+  },
+  created(){
+         axios.get("/api/form/show/" + this.$route.params.id)
+            .then((res) => {
+               console.log(res.data)
+               this.name = res.data.name
+               this.email = res.data.email               
+               this.gender = res.data.gender
+               this.skills = res.data.skills
+               
+               this.form_disabled = false
+               this.form_loading = false
+               // this.$refs.contact_us_form.reset()
+            })
+            .catch((error) => {
+               console.log(error)
+               this.error_message = error.response.data.message
+               this.error_snackbar = true
+               this.errors = error.response.data.errors
+               this.form_disabled = false
+               this.form_loading = false
+            });
   }
 };
 </script>

@@ -30,4 +30,6 @@ Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
 
 Route::get('/form/index', [App\Http\Controllers\FormController::class, 'index']);
 Route::post('/form/store', [App\Http\Controllers\FormController::class, 'store']);
+Route::get('/form/show/{id}', [App\Http\Controllers\FormController::class, 'show']);
+Route::patch('/form/update/{id}', [App\Http\Controllers\FormController::class, 'update']);
 Route::delete('/form/destroy/{id}', [App\Http\Controllers\FormController::class, 'destroy']);

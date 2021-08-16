@@ -1,6 +1,7 @@
 import Form from "./components/form";
 import AllData from "./components/data";
 import NotFound from "./components/notfound";
+import EditForm from "./components/edit_form";
 import axios from "axios";
 
 export default{
@@ -25,6 +26,12 @@ export default{
          component: AllData,
          name: 'AllData',
          meta: { title: 'All Data' }
+      },
+      {
+         path: '/edit_form/:id',
+         component: EditForm,
+         name: 'EditForm',
+         meta: { title: 'Edit Form' }
       },
    ]
 }

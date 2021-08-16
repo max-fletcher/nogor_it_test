@@ -45,7 +45,8 @@
                            <v-btn
                                  color="success"
                                  small
-                                 @click.prevent="">
+                                 :to="'/edit_form/' + form.id"
+                           >
                               Edit
                            </v-btn>
                            <v-btn

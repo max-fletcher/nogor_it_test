@@ -4,13 +4,13 @@
          <v-app-bar app color="white" flat elevation="3" dense>
             <v-app-bar-nav-icon @click="toggleSidebar = !toggleSidebar" class="hidden-md-and-up"></v-app-bar-nav-icon>
             <v-tabs centered color="grey darken-1">
-               <v-tab to="/" exact class="deep-purple--text">
+               <v-tab to="/all_data" exact class="deep-purple--text">
                   <v-icon left color="deep-purple">mdi-home</v-icon>
                   <!-- v-for="link in links" :key="link" -->
-                  Home
+                  All Data
                </v-tab>
-               <v-tab to="/all_data">
-                  <v-icon left>mdi-information</v-icon>About
+               <v-tab to="/">
+                  <v-icon left>mdi-pencil</v-icon>New Form
                </v-tab>
             </v-tabs>
          </v-app-bar>
