@@ -139,17 +139,17 @@
                               <template v-slot:label>
                                  <div> Gender</div>
                               </template>
-                              <v-radio value="1">
+                              <v-radio value="male">
                               <template v-slot:label>
                                  <div> Male </div>
                               </template>
                               </v-radio>
-                              <v-radio value="2">
+                              <v-radio value="female">
                               <template v-slot:label>
                                  <div>Female</div>
                               </template>
                               </v-radio>
-                              <v-radio value="3">
+                              <v-radio value="other">
                               <template v-slot:label>
                                  <div>Other</div>
                               </template>

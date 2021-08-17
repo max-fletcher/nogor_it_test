@@ -22294,7 +22294,7 @@ var render = function() {
                                     [
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "1" },
+                                        attrs: { value: "male" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",
@@ -22309,7 +22309,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "2" },
+                                        attrs: { value: "female" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",
@@ -22324,7 +22324,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "3" },
+                                        attrs: { value: "other" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",
@@ -22837,7 +22837,7 @@ var render = function() {
                                     [
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "1" },
+                                        attrs: { value: "male" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",
@@ -22852,7 +22852,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "2" },
+                                        attrs: { value: "female" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",
@@ -22867,7 +22867,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("v-radio", {
-                                        attrs: { value: "3" },
+                                        attrs: { value: "other" },
                                         scopedSlots: _vm._u([
                                           {
                                             key: "label",

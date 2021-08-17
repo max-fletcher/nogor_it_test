@@ -21,7 +21,7 @@ class FormController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'email', 'unique:forms'],
             'photo' => ['required', 'image', 'max:3000'],
-            'gender' => ['required', 'numeric', 'integer'],
+            'gender' => ['required', 'string', 'max:255'],
             'skills' => ['required', 'string', 'max:255'],
         ]);
 
@@ -40,21 +40,11 @@ class FormController extends Controller
         //upload image
         $request->file('photo')->storeAs('public/images', $filenameToStore);
 
-        if($request->gender == 1){
-            $gender = 'male';
-        }
-        elseif($request->gender == 2){
-            $gender = 'female';
-        }
-        elseif($request->gender == 3){
-            $gender = 'other';
-        }
-
         Form::Create([
             'name' => $request->name,
             'email' => $request->email,
             'photo' => $filenameToStore,
-            'gender' => $gender,
+            'gender' => $request->gender,
             'skills' => $request->skills,
         ]);
 
@@ -79,7 +69,7 @@ class FormController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'email'],
             'photo' => ['required', 'image', 'max:3000'],
-            'gender' => ['required', 'numeric', 'integer'],
+            'gender' => ['required', 'string', 'max:255'],
             'skills' => ['required', 'string', 'max:255'],
         ]);
         
@@ -96,16 +86,6 @@ class FormController extends Controller
         //upload image
         $request->file('photo')->storeAs('public/images', $filenameToStore);
 
-        if($request->gender == 1){
-            $gender = 'male';
-        }
-        elseif($request->gender == 2){
-            $gender = 'female';
-        }
-        elseif($request->gender == 3){
-            $gender = 'other';
-        }
-
         $form = Form::find($id);
         if($form){
             $form->name = $request->name;
@@ -114,7 +94,7 @@ class FormController extends Controller
                 Storage::delete('public/images/'.$form->photo);  //deletes previous file
             }
             $form->photo = $filenameToStore;
-            $form->gender = $gender;
+            $form->gender = $request->gender;
             $form->skills = $request->skills;
             $form->save();
             return response()->json( "Form Updated Successfully !!" ,201);
